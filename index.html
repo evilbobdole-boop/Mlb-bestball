@@ -41,38 +41,22 @@
 
   .container { max-width:1100px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
 
-  /* ── Header ── */
   header { padding:44px 0 26px; border-bottom:1px solid var(--border); }
-
   .header-inner { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-
   .eyebrow { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.2em; color:var(--accent); text-transform:uppercase; margin-bottom:8px; }
-
   h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,8vw,76px); line-height:0.9; letter-spacing:0.02em; }
   h1 span { color:var(--accent); }
-
   .subtitle { margin-top:10px; font-size:12px; color:var(--muted); font-family:'DM Mono',monospace; }
-
   .stats-bar { display:flex; gap:24px; flex-wrap:wrap; }
   .stat-item { text-align:right; }
   .stat-num { font-family:'Bebas Neue',sans-serif; font-size:34px; color:var(--accent); line-height:1; }
   .stat-num.good { color:var(--green); }
   .stat-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; }
-
   .week-info { display:flex; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap; }
-
-  .week-badge {
-    display:inline-flex; align-items:center; gap:7px;
-    background:rgba(0,212,255,0.07); border:1px solid rgba(0,212,255,0.2);
-    border-radius:4px; padding:5px 12px;
-    font-family:'DM Mono',monospace; font-size:11px; color:var(--accent);
-  }
-
+  .week-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(0,212,255,0.07); border:1px solid rgba(0,212,255,0.2); border-radius:4px; padding:5px 12px; font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); }
   .week-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 2s infinite; }
-
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.8);} }
 
-  /* ── Rules strip ── */
   .rules-strip { background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:10px 0; margin-bottom:26px; }
   .rules-inner { display:flex; gap:24px; flex-wrap:wrap; align-items:center; }
   .rule-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.12em; font-family:'DM Mono',monospace; white-space:nowrap; }
@@ -83,58 +67,33 @@
   .pos-of { background:rgba(0,230,118,0.08);  color:var(--green);   border:1px solid rgba(0,230,118,0.22); }
   .rule-text { font-size:12px; color:var(--text); font-family:'DM Mono',monospace; }
 
-  /* ── Nav ── */
   .nav-row { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px; flex-wrap:wrap; }
-
   .nav-tabs { display:flex; gap:4px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:4px; }
-
   .nav-tab { padding:7px 20px; border-radius:5px; border:none; background:transparent; color:var(--muted); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; cursor:pointer; transition:all 0.18s; }
   .nav-tab:hover { color:var(--text); background:var(--surface2); }
   .nav-tab.active { background:var(--accent); color:#000; font-weight:600; }
 
-  /* ── Loading / error states ── */
-  .loading-state {
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    padding:80px 24px; gap:16px; color:var(--muted);
-    font-family:'DM Mono',monospace; font-size:13px;
-  }
-
-  .spinner {
-    width:32px; height:32px; border:2px solid var(--border);
-    border-top-color:var(--accent); border-radius:50%;
-    animation:spin 0.8s linear infinite;
-  }
-
-  @keyframes spin { to { transform:rotate(360deg); } }
-
-  .error-state {
-    background:rgba(255,82,82,0.05); border:1px solid rgba(255,82,82,0.2);
-    border-radius:8px; padding:24px; margin:24px 0;
-    font-family:'DM Mono',monospace; font-size:12px; color:var(--red);
-    line-height:1.7;
-  }
-
-  .error-state strong { display:block; font-size:14px; margin-bottom:8px; }
-
-  /* ── Last updated badge ── */
-  .last-updated {
-    display:inline-flex; align-items:center; gap:6px;
-    font-family:'DM Mono',monospace; font-size:10px; color:var(--muted);
-    background:var(--surface); border:1px solid var(--border);
-    border-radius:4px; padding:4px 10px;
-  }
-
+  .last-updated { display:inline-flex; align-items:center; gap:6px; font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); background:var(--surface); border:1px solid var(--border); border-radius:4px; padding:4px 10px; }
   .last-updated.fresh { color:var(--green); border-color:rgba(0,230,118,0.2); }
+  .last-updated.fail  { color:var(--red);   border-color:rgba(255,82,82,0.2); }
 
-  /* ── Panels ── */
+  .loading-state { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 24px; gap:16px; color:var(--muted); font-family:'DM Mono',monospace; font-size:13px; }
+  .spinner { width:32px; height:32px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 0.8s linear infinite; }
+  @keyframes spin { to{transform:rotate(360deg);} }
+
+  .error-state { background:rgba(255,82,82,0.05); border:1px solid rgba(255,82,82,0.2); border-radius:8px; padding:24px; margin:24px 0; font-family:'DM Mono',monospace; font-size:12px; color:var(--red); line-height:1.8; }
+  .error-state strong { display:block; font-size:14px; margin-bottom:10px; }
+  .error-state code { background:rgba(255,255,255,0.06); padding:2px 6px; border-radius:3px; font-size:11px; }
+
+  .info-state { background:rgba(0,212,255,0.04); border:1px solid rgba(0,212,255,0.18); border-radius:8px; padding:20px 24px; margin:0 0 20px; font-family:'DM Mono',monospace; font-size:12px; color:var(--accent); line-height:1.8; }
+  .info-state strong { display:block; font-size:13px; margin-bottom:8px; color:var(--text); }
+
   .view-panel { display:none; }
   .view-panel.active { display:block; }
 
-  /* ── Section label ── */
   .section-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; display:flex; align-items:center; gap:12px; }
   .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
 
-  /* ── My Standings table ── */
   .my-table { width:100%; border-collapse:collapse; }
   .my-table thead tr { border-bottom:2px solid var(--accent); }
   .my-table th { padding:9px 16px; text-align:left; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); font-weight:500; }
@@ -145,14 +104,13 @@
   .my-table td { padding:14px 16px; font-size:13px; vertical-align:middle; }
   .my-table td.num { text-align:right; font-family:'DM Mono',monospace; }
   .my-table td.ctr { text-align:center; }
-
   @keyframes fadeUp { from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);} }
 
   .rank-badge { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:6px; font-family:'Bebas Neue',sans-serif; font-size:20px; line-height:1; border:1px solid var(--border); background:var(--surface2); color:var(--muted); }
-  .rank-badge.pos-1 { background:rgba(255,215,0,0.1); border-color:rgba(255,215,0,0.4); color:var(--gold); }
-  .rank-badge.pos-2 { background:rgba(176,190,197,0.1); border-color:rgba(176,190,197,0.35); color:var(--silver); }
-  .rank-badge.pos-3 { background:rgba(205,127,50,0.1); border-color:rgba(205,127,50,0.35); color:var(--bronze); }
-  .rank-badge.pos-top { background:rgba(0,230,118,0.08); border-color:rgba(0,230,118,0.3); color:var(--green); }
+  .rank-badge.pos-1   { background:rgba(255,215,0,0.1);   border-color:rgba(255,215,0,0.4);   color:var(--gold); }
+  .rank-badge.pos-2   { background:rgba(176,190,197,0.1); border-color:rgba(176,190,197,0.35);color:var(--silver); }
+  .rank-badge.pos-3   { background:rgba(205,127,50,0.1);  border-color:rgba(205,127,50,0.35); color:var(--bronze); }
+  .rank-badge.pos-top { background:rgba(0,230,118,0.08);  border-color:rgba(0,230,118,0.3);   color:var(--green); }
 
   .draft-name-cell { display:flex; align-items:center; gap:12px; }
   .draft-icon { width:32px; height:32px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Bebas Neue',sans-serif; font-size:13px; color:var(--muted); flex-shrink:0; }
@@ -166,35 +124,34 @@
   .pts-bar { height:100%; border-radius:2px; background:var(--accent); }
 
   .standing-pill { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:20px; font-family:'DM Mono',monospace; font-size:12px; font-weight:500; border:1px solid var(--border); background:var(--surface2); white-space:nowrap; }
-  .standing-pill.s1   { background:rgba(255,215,0,0.08); border-color:rgba(255,215,0,0.3); color:var(--gold); }
+  .standing-pill.s1   { background:rgba(255,215,0,0.08);   border-color:rgba(255,215,0,0.3);   color:var(--gold); }
   .standing-pill.s2   { background:rgba(176,190,197,0.08); border-color:rgba(176,190,197,0.3); color:var(--silver); }
-  .standing-pill.s3   { background:rgba(205,127,50,0.08); border-color:rgba(205,127,50,0.3); color:var(--bronze); }
-  .standing-pill.stop { background:rgba(0,230,118,0.07); border-color:rgba(0,230,118,0.25); color:var(--green); }
+  .standing-pill.s3   { background:rgba(205,127,50,0.08);  border-color:rgba(205,127,50,0.3);  color:var(--bronze); }
+  .standing-pill.stop { background:rgba(0,230,118,0.07);   border-color:rgba(0,230,118,0.25);  color:var(--green); }
   .standing-pill.smid { color:var(--muted); }
-  .standing-pill.slow { background:rgba(255,82,82,0.07); border-color:rgba(255,82,82,0.2); color:var(--red); }
+  .standing-pill.slow { background:rgba(255,82,82,0.07);   border-color:rgba(255,82,82,0.2);   color:var(--red); }
 
   .gap-val { font-family:'DM Mono',monospace; font-size:12px; color:var(--muted); }
   .gap-val.leading { color:var(--green); font-weight:500; }
 
-  /* ── Overlay ── */
+  /* Overlay */
   .draft-overlay { position:fixed; inset:0; z-index:100; display:flex; align-items:stretch; justify-content:flex-end; pointer-events:none; }
   .overlay-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.6); opacity:0; transition:opacity 0.3s; pointer-events:none; }
   .overlay-panel { position:relative; z-index:1; width:min(520px,100vw); background:var(--surface); border-left:1px solid var(--border); display:flex; flex-direction:column; transform:translateX(100%); transition:transform 0.3s cubic-bezier(0.4,0,0.2,1); pointer-events:none; overflow:hidden; }
   .draft-overlay.open .overlay-backdrop { opacity:1; pointer-events:all; }
-  .draft-overlay.open .overlay-panel { transform:translateX(0); pointer-events:all; }
+  .draft-overlay.open .overlay-panel    { transform:translateX(0); pointer-events:all; }
 
   .overlay-header { padding:24px 24px 16px; border-bottom:1px solid var(--border); display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-shrink:0; }
-  .overlay-title { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.04em; color:var(--accent); }
-  .overlay-sub { font-size:11px; color:var(--muted); font-family:'DM Mono',monospace; margin-top:4px; }
-
-  .close-btn { background:var(--surface2); border:1px solid var(--border); color:var(--muted); width:32px; height:32px; border-radius:6px; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.15s; line-height:1; }
+  .overlay-title  { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:0.04em; color:var(--accent); }
+  .overlay-sub    { font-size:11px; color:var(--muted); font-family:'DM Mono',monospace; margin-top:4px; }
+  .close-btn { background:var(--surface2); border:1px solid var(--border); color:var(--muted); width:32px; height:32px; border-radius:6px; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.15s; }
   .close-btn:hover { color:var(--text); border-color:var(--accent); }
 
   .me-banner { margin:16px 24px 0; background:var(--me-bg); border:1px solid var(--me-border); border-radius:8px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-shrink:0; }
-  .me-label { font-size:10px; font-family:'DM Mono',monospace; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; }
+  .me-label       { font-size:10px; font-family:'DM Mono',monospace; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; }
   .me-pts-display { font-weight:600; font-size:15px; margin-top:2px; }
-  .me-rank-big { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; color:var(--accent); }
-  .me-rank-label { font-size:10px; color:var(--muted); font-family:'DM Mono',monospace; text-align:right; }
+  .me-rank-big    { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; color:var(--accent); }
+  .me-rank-label  { font-size:10px; color:var(--muted); font-family:'DM Mono',monospace; text-align:right; }
 
   .overlay-podium { display:flex; gap:8px; padding:16px 24px 0; flex-shrink:0; }
   .mini-podium-card { flex:1; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:10px 12px; position:relative; overflow:hidden; }
@@ -202,7 +159,7 @@
   .mini-podium-card.mp1::before { background:var(--gold); }
   .mini-podium-card.mp2::before { background:var(--silver); }
   .mini-podium-card.mp3::before { background:var(--bronze); }
-  .mp-pos { font-size:9px; font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; }
+  .mp-pos  { font-size:9px; font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; }
   .mp1 .mp-pos{color:var(--gold);} .mp2 .mp-pos{color:var(--silver);} .mp3 .mp-pos{color:var(--bronze);}
   .mp-name { font-weight:600; font-size:11px; margin-bottom:4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .mp-pts  { font-family:'Bebas Neue',sans-serif; font-size:20px; line-height:1; }
@@ -222,15 +179,13 @@
   .overlay-table tbody tr.is-me td { color:var(--accent); }
   .overlay-table td { padding:11px 10px; font-size:12px; }
   .overlay-table td.num { text-align:right; font-family:'DM Mono',monospace; }
-
   .ov-rank { font-family:'Bebas Neue',sans-serif; font-size:18px; line-height:1; }
   .or1{color:var(--gold);} .or2{color:var(--silver);} .or3{color:var(--bronze);} .orn{color:var(--muted);}
   .ov-username { font-weight:600; }
-  .me-tag { display:inline-block; padding:1px 6px; border-radius:3px; font-size:9px; font-family:'DM Mono',monospace; background:rgba(0,212,255,0.12); border:1px solid var(--me-border); color:var(--accent); margin-left:6px; vertical-align:middle; letter-spacing:0.06em; }
+  .me-tag { display:inline-block; padding:1px 6px; border-radius:3px; font-size:9px; font-family:'DM Mono',monospace; background:rgba(0,212,255,0.12); border:1px solid var(--me-border); color:var(--accent); margin-left:6px; vertical-align:middle; }
 
-  /* ── All Drafts Grid ── */
   .all-drafts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
-  .mini-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; cursor:pointer; transition:border-color 0.18s, transform 0.18s; }
+  .mini-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; cursor:pointer; transition:border-color 0.18s,transform 0.18s; }
   .mini-card:hover { border-color:rgba(0,212,255,0.35); transform:translateY(-2px); }
   .mini-card-header { padding:10px 14px; background:var(--surface2); border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
   .mini-draft-name { font-family:'Bebas Neue',sans-serif; font-size:18px; color:var(--accent); letter-spacing:0.05em; }
@@ -245,10 +200,10 @@
   .mini-pts { font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); }
   .expand-hint { padding:6px 14px; background:var(--surface2); border-top:1px solid var(--border); font-size:10px; color:var(--muted); font-family:'DM Mono',monospace; text-align:center; letter-spacing:0.08em; }
 
-  @media (max-width:640px) {
-    .all-drafts-grid { grid-template-columns:1fr; }
-    .overlay-panel { width:100vw; }
-    .my-table th:nth-child(4), .my-table td:nth-child(4) { display:none; }
+  @media(max-width:640px){
+    .all-drafts-grid{grid-template-columns:1fr;}
+    .overlay-panel{width:100vw;}
+    .my-table th:nth-child(4),.my-table td:nth-child(4){display:none;}
   }
 
   footer { margin-top:56px; padding:20px 0; border-top:1px solid var(--border); text-align:center; font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); letter-spacing:0.08em; }
@@ -274,7 +229,7 @@
     <div class="week-info">
       <div class="week-badge"><span class="week-dot"></span><span>Week 1: Mar 25 – Apr 5, 2026</span></div>
       <div class="week-badge" style="background:rgba(255,107,53,0.06);border-color:rgba(255,107,53,0.2);color:var(--accent2);">Week 2: Apr 6 – Apr 12</div>
-      <div class="last-updated" id="last-updated">⏳ Loading data…</div>
+      <div class="last-updated" id="last-updated">⏳ Loading…</div>
     </div>
   </header>
 
@@ -293,21 +248,19 @@
   <div class="nav-row">
     <div class="nav-tabs">
       <button class="nav-tab active" data-view="mine" onclick="switchView(this)">My Standings</button>
-      <button class="nav-tab" data-view="all" onclick="switchView(this)">All 35 Drafts</button>
+      <button class="nav-tab" data-view="all"  onclick="switchView(this)">All 35 Drafts</button>
     </div>
   </div>
 
-  <!-- MY STANDINGS -->
   <div id="view-mine" class="view-panel active">
     <div id="mine-content">
-      <div class="loading-state"><div class="spinner"></div><span>Fetching live data from Google Sheets…</span></div>
+      <div class="loading-state"><div class="spinner"></div><span>Fetching live data…</span></div>
     </div>
   </div>
 
-  <!-- ALL DRAFTS -->
   <div id="view-all" class="view-panel">
     <div id="all-content">
-      <div class="loading-state"><div class="spinner"></div><span>Fetching live data from Google Sheets…</span></div>
+      <div class="loading-state"><div class="spinner"></div><span>Fetching live data…</span></div>
     </div>
   </div>
 
@@ -345,155 +298,151 @@
   </div>
 </div>
 
-<footer>MLB Best Ball · evilbobdole · DraftKings · Live data from Google Sheets</footer>
+<footer>MLB Best Ball · evilbobdole · DraftKings · Live from Google Sheets</footer>
 
 <script>
-// ════════════════════════════════════════════════════════════════
-//  ▼▼▼  PASTE YOUR PUBLISHED CSV URL HERE  ▼▼▼
-// ════════════════════════════════════════════════════════════════
-const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTrF63PV93LNzEtaVDsIRvHdUArhSQZbjtNmQgeIRxkPdT9mAJYWvF22Q7bB3H60YL22m6aPmWXkYcs/pubhtml?gid=1652496780&single=true';
-//
-// To get this URL:
-//   Google Sheets → File → Share → Publish to web
-//   Select "Leaderboard_Export" tab → format: CSV → Publish
-//   Copy the URL and replace PASTE_YOUR_CSV_URL_HERE above
-// ════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════
+//  PASTE YOUR PUBLISHED CSV URL HERE
+// ═══════════════════════════════════════════════════
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTrF63PV93LNzEtaVDsIRvHdUArhSQZbjtNmQgeIRxkPdT9mAJYWvF22Q7bB3H60YL22m6aPmWXkYcs/pub?gid=1652496780&single=true&output=csv';
+// ═══════════════════════════════════════════════════
 
-const MY_USER    = 'evilbobdole';
-const WEEKS_PLAYED = 1; // ← update each week
+const MY_USER      = 'evilbobdole';
+const WEEKS_PLAYED = 1; // update each week
 
-// ── CSV parser ──────────────────────────────────────────────────
+// ── CORS proxy list — tried in order until one works ──
+const PROXIES = [
+  url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+  url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  url => `https://cors-anywhere.herokuapp.com/${url}`,
+  url => `https://thingproxy.freeboard.io/fetch/${url}`,
+];
+
+async function fetchCSV(rawUrl) {
+  // Add cache-buster so Google always returns fresh data
+  const url = rawUrl.includes('?')
+    ? `${rawUrl}&cb=${Date.now()}`
+    : `${rawUrl}?cb=${Date.now()}`;
+
+  let lastErr = null;
+  for (const proxy of PROXIES) {
+    try {
+      const res = await fetch(proxy(url), { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      // Basic sanity check — CSV should contain a comma
+      if (text.includes(',')) return text;
+      throw new Error('Response does not look like CSV');
+    } catch (e) {
+      lastErr = e;
+      // try next proxy
+    }
+  }
+  throw lastErr || new Error('All proxies failed');
+}
+
+// ── CSV parser ─────────────────────────────────────
 function parseCSV(text) {
   const lines = text.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.trim().replace(/"/g,''));
+  const headers = lines[0].split(',').map(h => h.trim().replace(/"/g,'').toLowerCase());
   return lines.slice(1).map(line => {
-    // Handle quoted commas
-    const cols = [];
-    let cur = '', inQ = false;
+    const cols = []; let cur = '', inQ = false;
     for (const ch of line) {
-      if (ch === '"') { inQ = !inQ; }
-      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
-      else { cur += ch; }
+      if (ch==='"') { inQ=!inQ; }
+      else if (ch===',' && !inQ) { cols.push(cur.trim()); cur=''; }
+      else { cur+=ch; }
     }
     cols.push(cur.trim());
     const obj = {};
-    headers.forEach((h, i) => obj[h] = (cols[i]||'').replace(/"/g,''));
+    headers.forEach((h,i) => obj[h] = (cols[i]||'').replace(/"/g,'').trim());
     return obj;
   }).filter(r => r.draft_name && r.fantasy_team);
 }
 
-// ── Build draft map from CSV rows ───────────────────────────────
-// Expected CSV columns: draft_name, fantasy_team, total_points
+// ── Build draft map ────────────────────────────────
 function buildDrafts(rows) {
   const map = {};
   rows.forEach(r => {
-    const name = r.draft_name.trim();
+    const name = r.draft_name;
     if (!map[name]) map[name] = { name, teams: [] };
     map[name].teams.push({
-      username: r.fantasy_team.trim(),
+      username: r.fantasy_team,
       points:   parseFloat(r.total_points) || 0
     });
   });
-  // Sort teams within each draft by points desc
   Object.values(map).forEach(d => d.teams.sort((a,b) => b.points - a.points));
-  // Return array sorted by draft name
   return Object.values(map).sort((a,b) => a.name.localeCompare(b.name, undefined, {numeric:true}));
 }
 
-// ── Fetch & render ───────────────────────────────────────────────
 let DRAFTS = [];
 
+// ── Main load ──────────────────────────────────────
 async function loadData() {
-  // If no URL set yet, show helpful placeholder
   if (CSV_URL === 'PASTE_YOUR_CSV_URL_HERE') {
-    showSetupMessage();
-    return;
+    showSetupMessage(); return;
   }
-
+  const badge = document.getElementById('last-updated');
+  badge.textContent = '⏳ Loading…';
   try {
-    // Use a CORS proxy since Google Sheets CSV requires it from local files
-    // When hosted on a server or GitHub Pages this direct URL works fine:
-    const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(CSV_URL)}&t=${Date.now()}`;
-    const res  = await fetch(url);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = await res.text();
+    const text = await fetchCSV(CSV_URL);
     const rows = parseCSV(text);
-    if (!rows.length) throw new Error('CSV appears empty — check your published tab has data in rows 2+');
+    if (!rows.length) throw new Error('CSV parsed but no valid rows found — check column headers are: draft_name, fantasy_team, total_points');
     DRAFTS = buildDrafts(rows);
-    const now = new Date();
-    const timeStr = now.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
-    const el = document.getElementById('last-updated');
-    el.textContent = `✓ Updated ${timeStr}`;
-    el.className = 'last-updated fresh';
+    const t = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    badge.textContent = `✓ Updated ${t}`;
+    badge.className = 'last-updated fresh';
     renderMyStandings();
     renderAllDrafts();
   } catch (err) {
+    badge.textContent = '✗ Load failed';
+    badge.className = 'last-updated fail';
     showError(err.message);
   }
 }
 
 function showSetupMessage() {
-  const html = `
-    <div class="error-state" style="background:rgba(0,212,255,0.04);border-color:rgba(0,212,255,0.2);color:var(--accent)">
-      <strong>⚙️ Setup required</strong>
-      1. Follow the <strong>sheets_setup_guide.txt</strong> instructions to create your Leaderboard_Export tab<br>
-      2. Publish it as CSV (File → Share → Publish to web)<br>
-      3. Paste the CSV URL into this file where it says <code>PASTE_YOUR_CSV_URL_HERE</code><br><br>
-      In the meantime, here's a preview with sample data →
-    </div>`;
+  const html = `<div class="info-state">
+    <strong>⚙️ One step remaining</strong>
+    Paste your Google Sheets CSV URL into this file where it says <code>PASTE_YOUR_CSV_URL_HERE</code>, then re-upload to GitHub.
+  </div>`;
   document.getElementById('mine-content').innerHTML = html;
-  document.getElementById('all-content').innerHTML  = html.replace('→','');
-  // Load sample data so the UI is still explorable
-  DRAFTS = generateSampleData();
-  document.getElementById('last-updated').textContent = '⚠ Sample data';
-  renderMyStandings();
-  renderAllDrafts();
+  document.getElementById('all-content').innerHTML  = html;
+  document.getElementById('last-updated').textContent = '⚠ URL not set';
 }
 
 function showError(msg) {
-  const html = `
-    <div class="error-state">
-      <strong>⚠ Could not load data from Google Sheets</strong>
-      ${msg}<br><br>
-      Common fixes:<br>
-      • Make sure the sheet is <strong>published</strong> (File → Share → Publish to web), not just shared<br>
-      • Check the CSV URL is correct and the Leaderboard_Export tab exists<br>
-      • If running from a local file, try hosting on GitHub Pages or a simple web server
-    </div>`;
+  const html = `<div class="error-state">
+    <strong>⚠ Could not load data</strong>
+    ${msg}<br><br>
+    <strong>Things to check:</strong><br>
+    • Open your CSV URL directly in a browser — does it show comma-separated data?<br>
+    • Make sure the Leaderboard_Export tab headers are exactly: <code>draft_name</code>, <code>fantasy_team</code>, <code>total_points</code><br>
+    • Make sure you published via <strong>File → Share → Publish to web</strong> and selected CSV format<br>
+    • Try opening the page on GitHub Pages instead of as a local file
+  </div>`;
   document.getElementById('mine-content').innerHTML = html;
   document.getElementById('all-content').innerHTML  = html;
-  document.getElementById('last-updated').textContent = '✗ Load failed';
 }
 
-// ── Sample data (used only when CSV_URL not yet set) ─────────────
-function generateSampleData() {
-  const others = ['slimshady99','baseballwiz','taterTots22','BigSwing42','RotoPro','DiamondDave','sluggerX','pitchingking','homerunhero','stealsqueen','doubledigits','outfieldace','closerclub','noHitterFC','ERAplusplus','WARmaster','OPSking','babipbeliever','leftyspecialist','bullpenbuddy','lineupcard','sacrificebunt','hitandrun','stolen50','cycletracker','perfectgame','noDoubles','grandslammer','draftboard_5_','rotogrinder7'];
-  return Array.from({length:35},(_,i) => {
-    const pool = [...others].sort(()=>Math.random()-0.5).slice(0,11);
-    const teams = [MY_USER,...pool].map(u=>({username:u,points:parseFloat((Math.random()*200+30).toFixed(2))})).sort((a,b)=>b.points-a.points);
-    return {name:`Draft ${i+1}`, teams};
-  });
-}
-
-// ── Helpers ──────────────────────────────────────────────────────
-function getMyEntry(draft) { return draft.teams.find(t=>t.username===MY_USER); }
-function getMyRank(draft)  { return draft.teams.findIndex(t=>t.username===MY_USER)+1; }
-function rankCls(r)  { return r===1?'or1':r===2?'or2':r===3?'or3':'orn'; }
-function miniRC(r)   { return r===1?'mr1':r===2?'mr2':r===3?'mr3':'mrn'; }
+// ── Helpers ────────────────────────────────────────
+function getMyEntry(d) { return d.teams.find(t=>t.username===MY_USER); }
+function getMyRank(d)  { return d.teams.findIndex(t=>t.username===MY_USER)+1; }
+function rankCls(r)    { return r===1?'or1':r===2?'or2':r===3?'or3':'orn'; }
+function miniRC(r)     { return r===1?'mr1':r===2?'mr2':r===3?'mr3':'mrn'; }
 
 function standingPill(rank, total) {
   if (rank===1) return `<span class="standing-pill s1">🥇 1st of ${total}</span>`;
   if (rank===2) return `<span class="standing-pill s2">🥈 2nd of ${total}</span>`;
   if (rank===3) return `<span class="standing-pill s3">🥉 3rd of ${total}</span>`;
   if (rank<=Math.ceil(total*0.4)) return `<span class="standing-pill stop">${rank}th of ${total}</span>`;
-  if (rank>=total-1) return `<span class="standing-pill slow">${rank}th of ${total}</span>`;
+  if (rank>=total-1)              return `<span class="standing-pill slow">${rank}th of ${total}</span>`;
   return `<span class="standing-pill smid">${rank}th of ${total}</span>`;
 }
 
-// ── Render: My Standings ─────────────────────────────────────────
+// ── Render: My Standings ───────────────────────────
 function renderMyStandings() {
-  const rows = DRAFTS.map(draft => ({
-    draft, me:getMyEntry(draft), rank:getMyRank(draft), leader:draft.teams[0]
+  const rows = DRAFTS.map(d => ({
+    draft:d, me:getMyEntry(d), rank:getMyRank(d), leader:d.teams[0]
   })).filter(r=>r.me).sort((a,b)=>b.me.points-a.me.points);
 
   document.getElementById('stat-drafts').textContent  = rows.length;
@@ -503,18 +452,16 @@ function renderMyStandings() {
 
   const maxPts = rows[0]?.me.points || 1;
   let html = `
-    <div class="section-label">All ${rows.length} drafts — sorted by your points · click any row to view full draftboard</div>
-    <table class="my-table">
-      <thead><tr>
-        <th class="ctr" style="width:48px">Pos</th>
-        <th>Draft</th>
-        <th class="num">My Points</th>
-        <th class="num">Gap to 1st</th>
-        <th class="ctr">Standing</th>
-      </tr></thead>
-      <tbody>`;
+    <div class="section-label">All ${rows.length} drafts · sorted by your points · click any row to view full draftboard</div>
+    <table class="my-table"><thead><tr>
+      <th class="ctr" style="width:48px">Pos</th>
+      <th>Draft</th>
+      <th class="num">My Points</th>
+      <th class="num">Gap to 1st</th>
+      <th class="ctr">Standing</th>
+    </tr></thead><tbody>`;
 
-  rows.forEach((row, i) => {
+  rows.forEach((row,i) => {
     const {draft,me,rank,leader} = row;
     const total = draft.teams.length;
     const pct   = (me.points/maxPts*100).toFixed(1);
@@ -522,16 +469,14 @@ function renderMyStandings() {
       ? `<span class="gap-val leading">— leading</span>`
       : `<span class="gap-val">−${(leader.points-me.points).toFixed(2)}</span>`;
     const rbCls = rank===1?'pos-1':rank===2?'pos-2':rank===3?'pos-3':rank<=5?'pos-top':'';
-    const avg   = (me.points/WEEKS_PLAYED).toFixed(1);
-
-    html += `<tr style="animation-delay:${i*0.025}s" onclick="openOverlay('${draft.name}')">
+    html += `<tr style="animation-delay:${i*0.025}s" onclick="openOverlay('${draft.name.replace(/'/g,"\\'")}')">
       <td class="ctr"><span class="rank-badge ${rbCls}">${rank}</span></td>
       <td>
         <div class="draft-name-cell">
           <div class="draft-icon">${i+1}</div>
           <div>
             <div class="draft-name">${draft.name}<span class="arrow-hint">→</span></div>
-            <div class="draft-sub">12 teams · Wk avg: ${avg} pts</div>
+            <div class="draft-sub">${total} teams · Wk avg: ${(me.points/WEEKS_PLAYED).toFixed(1)} pts</div>
           </div>
         </div>
       </td>
@@ -548,12 +493,11 @@ function renderMyStandings() {
   document.getElementById('mine-content').innerHTML = html;
 }
 
-// ── Render: All Drafts Grid ──────────────────────────────────────
+// ── Render: All Drafts ─────────────────────────────
 function renderAllDrafts() {
-  let html = `<div class="section-label">All ${DRAFTS.length} drafts — your entry highlighted · click to expand</div><div class="all-drafts-grid">`;
-
+  let html = `<div class="section-label">All ${DRAFTS.length} drafts · your entry highlighted · click to expand</div><div class="all-drafts-grid">`;
   DRAFTS.forEach(draft => {
-    const myRank = getMyRank(draft);
+    const myRank  = getMyRank(draft);
     const myBadge = myRank===1?'🥇':myRank===2?'🥈':myRank===3?'🥉':`#${myRank}`;
     let rows = draft.teams.slice(0,5).map((t,i) => {
       const r=i+1, mc=miniRC(r), isMe=t.username===MY_USER;
@@ -563,55 +507,42 @@ function renderAllDrafts() {
         <span class="mini-pts">${t.points.toFixed(1)}</span>
       </div>`;
     }).join('');
-
-    if (myRank > 5) {
-      const me = getMyEntry(draft);
-      rows += `<div class="mini-team-row mini-me" style="border-top:1px dashed var(--border)">
+    if (myRank>5) {
+      const me=getMyEntry(draft);
+      rows+=`<div class="mini-team-row mini-me" style="border-top:1px dashed var(--border)">
         <span class="mini-rank mrn">${myRank}</span>
         <span class="mini-name mini-me-name">${MY_USER} ⬅</span>
         <span class="mini-pts">${me.points.toFixed(1)}</span>
       </div>`;
     }
-
-    html += `<div class="mini-card" onclick="openOverlay('${draft.name}')">
+    html+=`<div class="mini-card" onclick="openOverlay('${draft.name.replace(/'/g,"\\'")}')">
       <div class="mini-card-header">
         <span class="mini-draft-name">${draft.name}</span>
         <span class="mini-draft-sub">You: ${myBadge} of ${draft.teams.length}</span>
-      </div>
-      ${rows}
+      </div>${rows}
       <div class="expand-hint">click to view full draftboard →</div>
     </div>`;
   });
-
-  html += '</div>';
+  html+='</div>';
   document.getElementById('all-content').innerHTML = html;
 }
 
-// ── Overlay ──────────────────────────────────────────────────────
+// ── Overlay ────────────────────────────────────────
 function openOverlay(draftName) {
-  const draft = DRAFTS.find(d=>d.name===draftName);
-  if (!draft) return;
-  const me   = getMyEntry(draft);
-  const rank = getMyRank(draft);
-
-  document.getElementById('ov-title').textContent    = draft.name;
-  document.getElementById('ov-me-pts').textContent   = me ? `${me.points.toFixed(2)} pts` : '—';
-  document.getElementById('ov-me-rank').textContent  = `#${rank}`;
-
-  // Podium
-  const podium = document.getElementById('ov-podium');
-  podium.innerHTML = ['1st','2nd','3rd'].map((lbl,i) => {
-    const t = draft.teams[i]; if(!t) return '';
+  const draft = DRAFTS.find(d=>d.name===draftName); if(!draft) return;
+  const me=getMyEntry(draft), rank=getMyRank(draft);
+  document.getElementById('ov-title').textContent   = draft.name;
+  document.getElementById('ov-me-pts').textContent  = me?`${me.points.toFixed(2)} pts`:'—';
+  document.getElementById('ov-me-rank').textContent = `#${rank}`;
+  document.getElementById('ov-podium').innerHTML = ['1st','2nd','3rd'].map((lbl,i)=>{
+    const t=draft.teams[i]; if(!t) return '';
     return `<div class="mini-podium-card mp${i+1}">
       <div class="mp-pos">${lbl}</div>
       <div class="mp-name">${t.username}</div>
       <div class="mp-pts">${t.points.toFixed(1)}</div>
     </div>`;
   }).join('');
-
-  // Table
-  const tbody = document.getElementById('ov-tbody');
-  tbody.innerHTML = draft.teams.map((t,i) => {
+  document.getElementById('ov-tbody').innerHTML = draft.teams.map((t,i)=>{
     const r=i+1, isMe=t.username===MY_USER;
     return `<tr class="${isMe?'is-me':''}">
       <td><span class="ov-rank ${rankCls(r)}">${r}</span></td>
@@ -619,17 +550,16 @@ function openOverlay(draftName) {
       <td class="num">${t.points.toFixed(2)}</td>
     </tr>`;
   }).join('');
-
   document.getElementById('draft-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 
 function closeOverlay() {
   document.getElementById('draft-overlay').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
 
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeOverlay(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeOverlay(); });
 
 function switchView(btn) {
   document.querySelectorAll('.view-panel').forEach(p=>p.classList.remove('active'));
@@ -638,7 +568,6 @@ function switchView(btn) {
   btn.classList.add('active');
 }
 
-// ── Init ─────────────────────────────────────────────────────────
 loadData();
 </script>
 </body>
